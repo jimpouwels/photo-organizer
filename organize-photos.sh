@@ -9,7 +9,7 @@ do
   PHOTO_YEAR=$(echo "$PHOTO_DATE" | cut -d "-" -f 1)
   PHOTO_MONTH=$(echo "$PHOTO_DATE" | cut -d "-" -f 2)
   FINAL_TARGET_BASE="${TARGET_PATH}/${PHOTO_YEAR}_${PHOTO_MONTH}"
-  FINAL_TARGET_MOBILE="${TARGET_PATH}/${PHOTO_YEAR}_${PHOTO_MONTH}/mobile"
+  FINAL_TARGET_MOBILE="${FINAL_TARGET_BASE}/mobile"
   FINAL_TARGET_VIDEO="${FINAL_TARGET_BASE}/video"
   
   BASENAME=$(basename "$photo")
@@ -21,7 +21,7 @@ do
   fi
 
   mkdir -p "$FINAL_TARGET_BASE"
-  
+
   if [[ "${BASENAME,,}" == *.mov ]] || [[ "${BASENAME,,}" == *.mp4 ]]; then
     mkdir -p "$FINAL_TARGET_VIDEO"
     mv "$photo" "$FINAL_TARGET_VIDEO/"
