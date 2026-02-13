@@ -20,7 +20,6 @@ do
     continue
   fi
 
-
   mkdir -p "$FINAL_TARGET_BASE"
   
   if [[ "${BASENAME,,}" == *.mov ]] || [[ "${BASENAME,,}" == *.mp4 ]]; then
